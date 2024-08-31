@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from dotenv import load_dotenv
-# cors
 from fastapi.middleware.cors import CORSMiddleware
 
 import os
@@ -16,14 +15,6 @@ server.add_middleware(
   allow_methods=["*"],
   allow_headers=["*"],
 )
-
-@server.get("/")
-async def root():
-  return "Hello World"
-
-@server.get("/url")
-async def url():
-  return {"url_repo": "https://github.com/juannpg/curso_fastapi"}
 
 # import a roouter
 from routers import users
